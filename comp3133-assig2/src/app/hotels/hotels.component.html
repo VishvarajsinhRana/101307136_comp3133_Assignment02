@@ -1,0 +1,44 @@
+<h1>Hotels</h1>
+
+<!--
+<div *ngIf="loading">
+  Loading...
+</div>
+-->
+
+<table
+  class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp"
+>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric">Hotel ID</th>
+    <th class="mdl-data-table__cell--non-numeric">Hotel Name</th>
+    <th class="mdl-data-table__cell--non-numeric">Price</th>
+    <th>Email</th>
+    <th class="mdl-data-table__cell--non-numeric">Address</th>
+  </tr>
+  <tr *ngFor="let hotel of hotels">
+    <td class="mdl-data-table__cell--non-numeric">{{hotel.hotel_id}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{hotel.hotel_name}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{hotel.price}}</td>
+    <td>{{hotel.email}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{hotel.street}}, {{hotel.city}}, {{hotel.postal_code}}</td>
+  </tr>
+</table>
+
+
+<div class="paging">
+  <button
+    class="mdl-button mdl-js-button mdl-button--colored"
+    (click)="prevPage()"
+  >
+    <i class="material-icons">arrow_back</i>
+  </button>
+  Page {{page+1}}
+  <button
+    class="mdl-button mdl-js-button mdl-button--colored"
+    (click)="nextPage()"
+  >
+    <i class="material-icons">arrow_forward</i>
+  </button>
+</div>
+
